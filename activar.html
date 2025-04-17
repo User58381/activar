@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Activar Seguridad</title>
+  <script>
+    window.onload = () => {
+      const url = new URL(window.location.href);
+      const codigo = url.searchParams.get("codigo");
+      if (codigo === "estrella24") {
+        document.cookie = "validador=ok; expires=Fri, 31 Dec 2033 23:59:59 GMT; path=/";
+        document.body.innerHTML = "<h2>✅ Seguridad activada correctamente.</h2><p>Tu dispositivo ya puede validar.</p>";
+      } else {
+        document.body.innerHTML = "<h2>❌ Código incorrecto</h2><p>No tienes permiso para activar.</p>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Verificando clave secreta...</p>
+</body>
+</html>
